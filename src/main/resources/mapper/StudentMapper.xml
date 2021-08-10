@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xkf.system.dao.StudentMapper">
+<!--    <resultMap id="studentResultMap" type="com.xkf.system.bean.Student">-->
+<!--        <id column="stu_id" property="stuId"/>-->
+<!--        <result column="stu_name" property="stuName"/>-->
+<!--        <result column="stu_gender" property="stuGender"/>-->
+<!--        <result column="stu_education" property="stuEducation"/>-->
+<!--        <result column="stu_school" property="stuSchool"/>-->
+<!--        <result column="stu_phone" property="stuPhone"/>-->
+<!--        <result column="stu_home" property="stuHome"/>-->
+<!--        <result column="stu_graduation" property="stuGraduation"/>-->
+<!--    </resultMap>-->
+
+<!--    <select id="getStudentList" resultMap="studentResultMap" resultType="com.xkf.system.bean.Student">-->
+<!--        select * from student.student_info;-->
+<!--    </select>-->
+
+<!--    <select id="getStudentById" resultMap="studentResultMap" resultType="com.xkf.system.bean.Student">-->
+<!--        select * from student.student_info where stu_id = #{id};-->
+<!--    </select>-->
+
+<!--    <insert id="insertStudent" parameterType="map">-->
+<!--        insert into student.student_info values(#{id}, #{name}, #{gender}, #{education}, #{school}, #{phone}, #{home}, #{graduation});-->
+<!--    </insert>-->
+
+    <update id="updateStudent" parameterType="map">
+        update student.student_info
+        set stu_name = #{name}, stu_phone = #{phone}
+        where stu_id = #{id};
+    </update>
+
+    <delete id="deleteStudent">
+        delete from student.student_info where stu_id = #{id};
+    </delete>
+</mapper>
