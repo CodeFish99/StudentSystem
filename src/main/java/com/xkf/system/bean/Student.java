@@ -1,15 +1,21 @@
 package com.xkf.system.bean;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 
 /**
  * @author xukefei
  * @create 2021-08-02 下午1:35
  */
+@TableName("student_info")
 public class Student implements Serializable {
 
     public static final long serialVersionUID = 1L;
 
+    @TableId(type = IdType.AUTO)
     private int stuId;
     private String stuName;
     private String stuGender;
